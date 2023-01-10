@@ -4,23 +4,14 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
+        Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
 
-        HashMap<String, String> postalCodes = new HashMap<>();
+        Library library = new Library();
+        library.addBook(senseAndSensibility);
+        library.addBook(prideAndPrejudice);
 
-        postalCodes.put("00710", "Helsinki");
-        postalCodes.put("90014", "Oulu");
-        postalCodes.put("33720", "Tamepere");
-        postalCodes.put("33014", "Tampere");
-
-        System.out.println(postalCodes.get("90014"));
-
-
-        // null reference if no key in hashmap
-        System.out.println(postalCodes.get("80897"));
-
-        System.out.println(postalCodes);
-
+        System.out.println(library.getBookByPart("sensibility"));
 
 
     }

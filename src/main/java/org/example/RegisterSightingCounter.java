@@ -20,6 +20,7 @@ public class RegisterSightingCounter {
     }
 
     public int timesSighted(String sighted) {
+        System.out.println(this.allSightings.get(sighted));
         return this.allSightings.get(sighted);
     }
 }

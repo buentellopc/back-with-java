@@ -10,11 +10,8 @@ public class RegisterSightingCounter {
     }
 
     public void addSighting(String sighted) {
-        if (!this.allSightings.containsKey(sighted)) {
-            this.allSightings.put(sighted, 0);
-        }
-
-        int timesSighted = this.allSightings.get(sighted);
+        // both options are covered: new or already in the hashmap
+        int timesSighted = this.allSightings.getOrDefault(sighted, 0);
         timesSighted++;
         this.allSightings.put(sighted, timesSighted);
     }

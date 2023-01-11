@@ -4,15 +4,12 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        RegisterSightingCounter registerSightingCounter = new RegisterSightingCounter();
+        Notepad basics = new Notepad("Equals basics", 2000);
+        Notepad advanced = new Notepad("Equals advanced", 2001);
 
-        Book bookObject = new Book("Book Object", 2000, "...");
-        Book anotherBookObject = new Book("Book Object", 2000, "...");
-
-        if (bookObject.equals(registerSightingCounter)) {
-            System.out.println("The books are the same");
-        } else {
-            System.out.println("The books aren't the same");
-        }
+        System.out.println(basics.equals(basics));
+        System.out.println(basics.equals(advanced));
+        System.out.println(basics.equals(new Notepad("Equals basics", 2000)));
+        System.out.println(basics.equals(new Notepad("Equals basics", 2001)));
     }
 }

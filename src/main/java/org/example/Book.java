@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Book {
     private String name;
     private String content;
@@ -38,5 +40,28 @@ public class Book {
     public String toString() {
         return "Name: " + this.name + " (" + this.published + ")\n"
                 + "Content: " + this.content;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        // If the variables are located in the same place, they're the same
+        if (this == o) return true;
+
+        // If comparedObject is not of type book, objects aren't the same;
+        if (o == null || getClass() != o.getClass()) {
+            System.out.println("not an instance of book");
+            return false;
+        }
+
+
+        // Until this point references are not the same but object is of the same class, compare the contents
+        Book book = (Book) o;
+        return published == book.published && Objects.equals(name, book.name) && Objects.equals(content, book.content);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, content, published);
     }
 }

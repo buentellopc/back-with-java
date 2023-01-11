@@ -6,14 +6,13 @@ public class Main {
     public static void main(String[] args) {
         RegisterSightingCounter registerSightingCounter = new RegisterSightingCounter();
 
-        // Create your set of plates to sight
-        registerSightingCounter.addSighting("fooPlate");
-        registerSightingCounter.addSighting("barPlate");
+        Book bookObject = new Book("Book Object", 2000, "...");
+        Book anotherBookObject = new Book("Book Object", 2000, "...");
 
-        System.out.println("Times sighted: " + registerSightingCounter.timesSighted("fooPlate"));
-
-        System.out.println("--- Next, some error");
-        System.out.println("Times sighted: " + registerSightingCounter.timesSighted("foofjsklde"));
-
+        if (bookObject.equals(registerSightingCounter)) {
+            System.out.println("The books are the same");
+        } else {
+            System.out.println("The books aren't the same");
+        }
     }
 }

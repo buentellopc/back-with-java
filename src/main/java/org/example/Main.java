@@ -5,19 +5,18 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Book> books = new ArrayList<>();
+        TaskTracker tracker = new TaskTracker();
+        tracker.add("Ada", 3);
+        tracker.add("Ada", 4);
+        tracker.add("Ada", 3);
+        tracker.add("Ada", 3);
 
-        Book bookObject = new Book("Book Object", 2000, "...");
-        books.add(bookObject);
+        tracker.add("Pekka", 4);
+        tracker.add("Pekka", 4);
 
-        if (books.contains(bookObject)) {
-            System.out.println("Book Object was found.");
-        }
+        tracker.add("Matti", 1);
+        tracker.add("Matti", 2);
 
-        bookObject = new Book("Book Object", 2000, "...");
-
-        if (!books.contains(bookObject)) {
-            System.out.println("Book Object was not found.");
-        }
+        tracker.print();
     }
 }
